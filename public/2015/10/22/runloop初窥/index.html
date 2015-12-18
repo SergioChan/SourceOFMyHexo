@@ -56,7 +56,7 @@ self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@
 self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(timeUpdate:) userInfo:nil repeats:YES];
 那么当你滑动或者保持你的手指在scrol">
 <meta property="og:image" content="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Conceptual/Multithreading/Art/runloop.jpg">
-<meta property="og:updated_time" content="2015-10-22T11:43:37.000Z">
+<meta property="og:updated_time" content="2015-12-18T13:13:14.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="runloop初窥">
 <meta name="twitter:description" content="先来说一个很简单的实例在scrollView中添加一个timer来刷新视图的时候，如果只是简单的声明
@@ -263,10 +263,10 @@ self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@
       
 
       
-        <span itemprop="articleBody"><h2 id="先来说一个很简单的实例">先来说一个很简单的实例</h2><p>在scrollView中添加一个timer来刷新视图的时候，如果只是简单的声明</p>
+        <span itemprop="articleBody"><h2 id="u5148_u6765_u8BF4_u4E00_u4E2A_u5F88_u7B80_u5355_u7684_u5B9E_u4F8B"><a href="#u5148_u6765_u8BF4_u4E00_u4E2A_u5F88_u7B80_u5355_u7684_u5B9E_u4F8B" class="headerlink" title="先来说一个很简单的实例"></a>先来说一个很简单的实例</h2><p>在scrollView中添加一个timer来刷新视图的时候，如果只是简单的声明</p>
 <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line">self.timer = [NSTimer <span class="string">scheduledTimerWithTimeInterval:</span><span class="number">1.0</span>f <span class="string">target:</span>self <span class="string">selector:</span><span class="annotation">@selector</span>(<span class="string">timeUpdate:</span>) <span class="string">userInfo:</span>nil <span class="string">repeats:</span>YES];</span><br></pre></td></tr></table></figure>
 <p>那么当你滑动或者保持你的手指在scrollView上的时候，timer是不会被响应的，这不是因为刷新视图的操作被占用，而是因为当你没有显式声明的时候，你所定义的timer默认都是加在主线程上，并且，当你在对scrollView进行操作的时候，你的timer的事件根本不会被响应到，这就得说到runloop了。而runloop也是底层原理中相当重要的一部分。我们先从它说起。</p>
-<h2 id="什么是runloop">什么是runloop</h2><p>Runloop，顾名思义就是运行的循环。简单理解就是多线程机制中的基础，它能够接收外部事件的输入，并且在有事件的时候保持运行，在没有事件的时候进入休眠。并且它对于线程的消息处理机制进行了很好的封装。</p>
+<h2 id="u4EC0_u4E48_u662Frunloop"><a href="#u4EC0_u4E48_u662Frunloop" class="headerlink" title="什么是runloop"></a>什么是runloop</h2><p>Runloop，顾名思义就是运行的循环。简单理解就是多线程机制中的基础，它能够接收外部事件的输入，并且在有事件的时候保持运行，在没有事件的时候进入休眠。并且它对于线程的消息处理机制进行了很好的封装。</p>
 <p>对于线程来说，每一个线程都有一个runloop对象，是否能向某个线程的runloop发送事件取决于你是否启动了这个runloop，系统会默认在你的程序启动的时候运行主线程上的runloop，但是你自定义创建出来的线程可以不需要运行runloop，一些第三方框架，例如AFNetworking，就有在自己的线程上维护一个runloop对象。</p>
 <p>在 Core Foundation 里面关于 RunLoop 有5个类:</p>
 <ul>
@@ -289,7 +289,7 @@ self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@
 </ul>
 </blockquote>
 <p>CFRunLoopObserver类型的对象也可以称之为观察者。每个观察者都包含了一个回调，当runloop的状态发生变化时，你可以通过回调来知道当前的状态。</p>
-<h2 id="Mode">Mode</h2><p><img src="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Conceptual/Multithreading/Art/runloop.jpg" alt="image"></p>
+<h2 id="Mode"><a href="#Mode" class="headerlink" title="Mode"></a>Mode</h2><p><img src="https://developer.apple.com/library/prerelease/ios/documentation/Cocoa/Conceptual/Multithreading/Art/runloop.jpg" alt="image"></p>
 <p>在你的程序中，runloop的过程实际上是一个无限循环的循环体，这个循环体是由你的程序来运行的。主线程的runloop由于系统已经实现并且没有它程序就不能运行，因此不需要我们手动去运行这个runloop。然而如果我们需要在自定义的线程中使用到runloop，我们则需要用一个do…while循环来驱动它。而runloop对象负责不断地在循环体中运行传进来的事件，然后将事件发给相应的响应。</p>
 <blockquote>
 <p>如果你打开你的程序的main.m，你就会发现其实主线程的runloop就是在main函数中进行的，并且系统已经为你生成好了autoreleasepool，因此你也无需操心主线程上的内存释放到底是在什么时候执行了：</p>
@@ -306,12 +306,12 @@ self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@
 <p>在文首的情况中，我们可以根据苹果官方文档的定义知道，当你在滑动页面的时候，主线程的runloop自动进入了NSEventTrackingRunLoopMode，而你的timer只是运行在DefaultMode下，所以不能响应。那么最简单的办法就是将你的timer添加在其他的mode下，像这样即可：</p>
 <figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="attr_selector">[[NSRunLoop currentRunLoop]</span> <span class="tag">addTimer</span><span class="pseudo">:self</span><span class="class">.timer</span> <span class="tag">forMode</span><span class="pseudo">:NSRunLoopCommonModes</span>];</span><br></pre></td></tr></table></figure>
 <p>需要注意的是CommonModes其实并不是一种Mode，而是一个集合。因此runloop并不能在CommonModes下运行，相反，你可以将需要输入的事件源添加为这个mode，这样无论runloop运行在哪个mode下都可以响应这个输入事件，否则这个事件将不会得到响应。</p>
-<h2 id="Input_Source">Input Source</h2><p>输入源包括三种，端口，自定义输入源和performSelector的消息。根据上面的图我们可以看出，在runloop接收到消息并执行了指定方法的时候，它会执行runUntilDate:这个方法来退出当前循环。</p>
+<h2 id="Input_Source"><a href="#Input_Source" class="headerlink" title="Input Source"></a>Input Source</h2><p>输入源包括三种，端口，自定义输入源和performSelector的消息。根据上面的图我们可以看出，在runloop接收到消息并执行了指定方法的时候，它会执行runUntilDate:这个方法来退出当前循环。</p>
 <p>端口源是基于Mach port的，其他进程或线程可以通过端口来发送消息。这里的知识点需要深入到Mach，就已经比较晦涩难懂了……这里你只需要知道你可以用Cocoa封装的NSPort对象来进行线程之间的通信，而这种通信方式所产生的事件就是通过端口源来传入runloop的。关于Mach port的更深层介绍可以看<a href="http://segmentfault.com/a/1190000002400329" target="_blank" rel="external">这篇</a>。</p>
 <p>自定义输入源。Core Foundation提供了CFRunLoopSourceRef类型的相关函数，可以用来创建自定义输入源。</p>
 <p>performSelector输入源:</p>
 <figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="comment">//在主线程的Run Loop下执行指定的 @selector 方法</span></span><br><span class="line"><span class="string">performSelectorOnMainThread:</span><span class="string">withObject:</span><span class="string">waitUntilDone:</span></span><br><span class="line"><span class="string">performSelectorOnMainThread:</span><span class="string">withObject:</span><span class="string">waitUntilDone:</span><span class="string">modes:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//在当前线程的Run Loop下执行指定的 @selector 方法</span></span><br><span class="line"><span class="string">performSelector:</span><span class="string">onThread:</span><span class="string">withObject:</span><span class="string">waitUntilDone:</span></span><br><span class="line"><span class="string">performSelector:</span><span class="string">onThread:</span><span class="string">withObject:</span><span class="string">waitUntilDone:</span><span class="string">modes:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//在当前线程的Run Loop下延迟加载指定的 @selector 方法</span></span><br><span class="line"><span class="string">performSelector:</span><span class="string">withObject:</span><span class="string">afterDelay:</span></span><br><span class="line"><span class="string">performSelector:</span><span class="string">withObject:</span><span class="string">afterDelay:</span><span class="string">inModes:</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//取消当前线程的调用</span></span><br><span class="line"><span class="string">cancelPreviousPerformRequestsWithTarget:</span></span><br><span class="line"><span class="string">cancelPreviousPerformRequestsWithTarget:</span><span class="string">selector:</span><span class="string">object:</span></span><br></pre></td></tr></table></figure>
-<h2 id="runloop生命周期">runloop生命周期</h2><p>每一次runloop其实都是一次循环，runloop会在循环中执行runUntilDate: 或者runMode: beforeDate: 来开始每一个循环。而每一个循环又分为下面几个阶段，也就是runloop的生命周期：</p>
+<h2 id="runloop_u751F_u547D_u5468_u671F"><a href="#runloop_u751F_u547D_u5468_u671F" class="headerlink" title="runloop生命周期"></a>runloop生命周期</h2><p>每一次runloop其实都是一次循环，runloop会在循环中执行runUntilDate: 或者runMode: beforeDate: 来开始每一个循环。而每一个循环又分为下面几个阶段，也就是runloop的生命周期：</p>
 <ul>
 <li>kCFRunLoopEntry 进入循环</li>
 <li>kCFRunLoopBeforeTimers 先接收timer的事件</li>
