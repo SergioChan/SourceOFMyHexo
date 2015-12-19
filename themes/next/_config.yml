@@ -79,10 +79,10 @@ scroll_to_more: true
 
 # TOC in the Sidebar
 toc:
-  enable: false
+  enable: true
 
   # Automatically add list number to toc.
-  number: false
+  number: true
 
 
 # Automatically Excerpt

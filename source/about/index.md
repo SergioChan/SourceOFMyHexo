@@ -5,7 +5,7 @@ comments: false
 ---
 
 ## About me
-就职于[校园社交创业团队tataUFO](http://www.tataufo.com)/同时也是[SwiftGG中文翻译组](http://swift.gg/)成员。
+就职于[RavenTech渡鸦科技](https://www.raventech.com/)/同时也是[SwiftGG中文翻译组](http://swift.gg/)成员和交互动效开源组织[Animatious](http://anius.io)成员。
 
 * 软件工程。喜欢梳理，喜欢好的设计和架构。
 * 团队狗。喜欢和一群好基友一起做好玩的事情。特别是Hackathon！狂热！

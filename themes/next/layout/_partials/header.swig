@@ -10,9 +10,9 @@
 
   <div class="custom-logo-site-title">
     <a href="{{ config.root }}"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">{{ config.title }}</span>
-      <span class="logo-line-after"><i></i></span>
+      <span class="logo-line-before"><i style="background-color:wheat"></i></span>
+      <span class="site-title" style="color:wheat">{{ config.title }}</span>
+      <span class="logo-line-after"><i style="background-color:wheat"></i></span>
     </a>
   </div>
   <p class="site-subtitle">{{ config.subtitle }}</p>
@@ -34,7 +34,7 @@
       {% for name, path in theme.menu %}
         {% set itemName = name.toLowerCase() %}
         <li class="menu-item menu-item-{{ itemName }}">
-          <a href="{{ url_for(path) }}" rel="section">
+          <a href="{{ url_for(path) }}" rel="section" style="color:wheat">
             {% if theme.menu_icons.enable %}
               <i class="menu-item-icon fa fa-{{theme.menu_icons[itemName] || 'question-circle'}}"></i> <br />
             {% endif %}
