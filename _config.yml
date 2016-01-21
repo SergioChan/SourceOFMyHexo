@@ -71,6 +71,14 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
+Plugins:
+- hexo-generator-feed
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
 ## Themes: http://hexo.io/themes/
 theme: next
 
