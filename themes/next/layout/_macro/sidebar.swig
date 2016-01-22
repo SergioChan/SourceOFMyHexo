@@ -28,7 +28,7 @@
           <img class="site-author-image" style="border-radius:50%" src="{{ theme.avatar or url_for(theme.images) + '/default_avatar.jpg' }}" alt="{{ theme.author }}" itemprop="image"/>
           <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
         </div>
-        <p class="site-description motion-element" itemprop="description">{{ theme.description }}</p>
+        <p class="site-description motion-element" style="color: wheat" itemprop="description">{{ theme.description }}</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="{{ url_for(theme.menu.archives) }}">
