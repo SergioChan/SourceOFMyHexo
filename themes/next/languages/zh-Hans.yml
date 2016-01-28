@@ -12,6 +12,7 @@ menu:
   about: 关于我
   search: 搜索
   commonweal: 公益404
+  portfolio: Portfolio
 
 
 sidebar:
@@ -64,7 +65,7 @@ cheers:
   great: 非常好
   excellent: 太棒了
 
-keep_on: 继续努力。
+keep_on: May the force be with you!
 
 symbol:
   comma: '， '
