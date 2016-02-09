@@ -3,7 +3,7 @@
   {% set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
   {% set navlessPost = headlessPost %}
 
-  <article class="post post-type-{{ post.type | default('normal') }} {{ post_extra_class | default('') }}" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-{{ post.type | default('normal') }} {{ post_extra_class | default('') }}" style="margin-top: 30px;box-shadow: 5px 5px 25px rgba(85,85,85,0.5);padding: 30px;" itemscope itemtype="http://schema.org/Article">
 
     {% if not headlessPost %}
       <header class="post-header">
