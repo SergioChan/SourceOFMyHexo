@@ -33,4 +33,39 @@ comments: false
 * **Redis** - 从撸Feedly开始用，基本命令和数据结构就那些，属于高效易上手的NoSQL了吧
 * **Mongo** - 也用了很多了，数据库设计的思路会很不一样
 
+## TimeLine
+
+###Hackathon Rank#1
+* Dorahacks
+* 2015 年 5 月
+* Rank #1 in Hackathon of Beihang University hosted by Dorahacks
+* Developed a Chrome plugins to add Danmaku to every single web pages
+
+### FengRu Venture Competition Silver Medal
+* Beijing University of Aeronautics and Astronautics
+* 2014 年 5 月
+* Silver Medal for the iCampus project in Venture Competition of the whole university.
+
+
+### Hackathon Rank#1
+* SegmentFault Inc.
+* 2015 年 10 月
+* Rank #1 in SegmentFault Hackathon of Beijing 2015
+* Developed a AR project helping people fixing their laptop or some thing else based on Qualcomm AR engine.
+
+
+### Hackathon Rank#1
+* China Academy of Art
+* 2015 年 12 月
+* Rank #1 in Art Hackathon of China 2015 hosted in Hangzhou by China Academy of Art
+* Developed a data-to-music project based on Scene Kit and Max/Msp using OSC protocol to transfer data.
+
+
+### Hackathon Rank#3
+* Uber Inc.
+* 2016 年 1 月
+* Rank #3 in Hackathon Uber China 2016
+* Developed a guide app for travellers all around the world using Uber API to give them more comfortable experience
+
+## More?
 项目和经历什么的我不多说了，我的[Github仓库](https://github.com/SergioChan)和[Linkedin主页](https://cn.linkedin.com/pub/sergio-chan/42/14b/a6)都有足够的信息让你了解更多的我了。
