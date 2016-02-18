@@ -1,4 +1,4 @@
-title: 不要想当然的就使用UITableView
+title: 不要想当然的使用UITableView
 date: 2016-02-16 16:41:50
 categories: iOS菜鸟心得
 tags: [UITableView]
@@ -80,6 +80,7 @@ typedef enum {
 3. 不要到处写reloadData，你的队友们会把你炸了的。可以局部刷新的请用局部刷新。
 4. 复杂结构的Cell尽量不要用autolayout，由于autolayout会有一个视图依赖链，在Cell中更新一个约束会导致一系列视图的更新，当视图结构很复杂的时候，视图更新对性能的消耗就很大了。
 5. 在Cell中对CALayer的一些操作和效果，都会对性能有很大的影响。特别指出的是过多的圆角和阴影。
+6. 更多的可以参考objcio的[这篇文章](https://www.objc.io/issues/1-view-controllers/table-views/)。
 
 ## 更多?
 
