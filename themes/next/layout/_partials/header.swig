@@ -1,24 +1,18 @@
 <div class="site-meta {% if theme.custom_logo.enabled %}custom-logo{% endif %}">
-  {% if theme.custom_logo.image and not theme.scheme %}
     <div class="site-meta-headline">
-      <a>
-        <img class="custom-logo-image" src="{{ theme.custom_logo.image }}"
+        <img class="custom-logo-image" style="display:inline-block" src="/image/NavLogo.png"
              alt="{{ config.title }}"/>
-      </a>
     </div>
-  {% endif %}
 
   <div class="custom-logo-site-title">
     <a href="{{ config.root }}"  class="brand" rel="start">
-      <span class="logo-line-before"><i style="background-color:wheat"></i></span>
-      <span class="site-title" style="color:wheat">{{ config.title }}</span>
-      <span class="logo-line-after"><i style="background-color:wheat"></i></span>
+      <span class="site-title" style="color:black">{{ config.title }}</span>
     </a>
   </div>
   <p class="site-subtitle">{{ config.subtitle }}</p>
 </div>
 
-<div class="site-nav-toggle">
+<div style="margin-top: 10px;text-align: center;float:none" class="site-nav-toggle">
   <button>
     <span class="btn-bar"></span>
     <span class="btn-bar"></span>
@@ -34,7 +28,7 @@
       {% for name, path in theme.menu %}
         {% set itemName = name.toLowerCase() %}
         <li class="menu-item menu-item-{{ itemName }}">
-          <a href="{{ url_for(path) }}" rel="section" style="color:wheat">
+          <a href="{{ url_for(path) }}" rel="section" style="color:black">
             {% if theme.menu_icons.enable %}
               <i class="menu-item-icon fa fa-{{theme.menu_icons[itemName] || 'question-circle'}}"></i> <br />
             {% endif %}
@@ -64,3 +58,4 @@
   {% endif %}
 </nav>
 
+<img src="/image/LineImg.png" style="margin-top: 10px;height: 2px;align-content: center;width: 100%;">
