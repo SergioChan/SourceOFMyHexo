@@ -58,4 +58,4 @@
   {% endif %}
 </nav>
 
-<img src="/image/LineImg.png" style="margin-top: 10px;height: 2px;align-content: center;width: 100%;">
+<img src="/image/LineImg.png" style="margin-top: 10px;height: 2px;align-content: center;width: 70%;margin-left: 15%;">

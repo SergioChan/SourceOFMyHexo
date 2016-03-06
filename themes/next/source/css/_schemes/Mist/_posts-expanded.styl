@@ -5,7 +5,7 @@
 
   .post-title,
   .post-meta {
-    text-align: $site-meta-text-align;
+    text-align: center;
     +mobile() { text-align: center; }
   }
   .post-eof { display: none; }
@@ -26,7 +26,6 @@
     +desktop-large() { font-size: $font-size-headings-large; }
 
     &:before {
-      content: " ";
       position: absolute;
       left: -10px;
       top: 25%;
@@ -56,21 +55,21 @@
 
 .post-more-link {
   margin-top: 20px;
-  text-align: left;
+  text-align: center;
 
   a {
     padding: 0;
     font-size: $font-size-base;
-    color: $grey-dim;
+    font-weight: lighter;
+    color: black;
     background: none;
     border: none;
-    border-bottom: 2px solid $grey-dim;
     transition-property: border;
 
     +mobie() { font-size: $font-size-small; }
     +desktop-large() { font-size: $font-size-large; }
 
 
-    &:hover { border-bottom-color: $black-deep; }
+    &:hover { font-weight: bolder; }
   }
 }

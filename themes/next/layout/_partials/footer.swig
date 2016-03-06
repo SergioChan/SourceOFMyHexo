@@ -5,7 +5,7 @@
   <span class="with-love">
     <i class="icon-next-heart fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">{{ config.author }}</span>
+  <span class="author" itemprop="copyrightHolder"> Lovely designed and created by Sergio Chan </span>
 </div>
 </div>
 

@@ -3,7 +3,7 @@
   {% set headlessPost = Array.prototype.indexOf.call(['quote', 'picture'], post.type) > -1 %}
   {% set navlessPost = headlessPost %}
 
-  <article class="post post-type-{{ post.type | default('normal') }} {{ post_extra_class | default('') }}" style="margin-top: 30px;box-shadow: 5px 5px 25px rgba(85,85,85,0.5);padding: 30px;" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-{{ post.type | default('normal') }} {{ post_extra_class | default('') }}" style="margin-top: 0px; padding-bottom: 0px; padding-top: 0px; padding-left: 30px; padding-right: 30px;" itemscope itemtype="http://schema.org/Article">
 
     {% if not headlessPost %}
       <header class="post-header">
@@ -112,6 +112,7 @@
             <a class="btn" href="{{ url_for(post.path) }}">
               {{ __('post.read_more') }} &raquo;
             </a>
+	    <img src="/image/LineImg.png" style="box-sizing: content-box;border: none;margin-top: 20px;height: 2px;width: 70%;margin-left: 15%;"/>
           </div>
         {% elif post.excerpt  %}
           {{ post.excerpt }}
@@ -119,6 +120,7 @@
             <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
               {{ __('post.read_more') }} &raquo;
             </a>
+	    <img src="/image/LineImg.png" style="box-sizing: content-box;border: none;margin-top: 20px;height: 2px;width: 70%;margin-left: 15%;"/>
           </div>
         {% elif theme.auto_excerpt.enable %}
           <span itemprop="articleBody">
@@ -130,6 +132,7 @@
             <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
               {{ __('post.read_more') }} &raquo;
             </a>
+	    <img src="/image/LineImg.png" style="box-sizing: content-box;border: none;margin-top: 20px;height: 2px;width: 70%;margin-left: 15%;"/>
           </div>
         {% else %}
           <span itemprop="articleBody">
