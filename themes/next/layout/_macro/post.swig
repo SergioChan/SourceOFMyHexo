@@ -112,7 +112,7 @@
             <a class="btn" href="{{ url_for(post.path) }}">
               {{ __('post.read_more') }} &raquo;
             </a>
-	    <img src="/image/LineImg.png" style="box-sizing: content-box;border: none;margin-top: 20px;height: 2px;width: 70%;margin-left: 15%;"/>
+	   <div style="background-size: 100%;background-repeat: no-repeat;box-sizing: content-box;border: none;margin-top: 20px;height: 2px;width: 70%;margin-left: 15%;background-image:url('/image/LineImg.png')"/>
           </div>
         {% elif post.excerpt  %}
           {{ post.excerpt }}
@@ -120,7 +120,7 @@
             <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
               {{ __('post.read_more') }} &raquo;
             </a>
-	    <img src="/image/LineImg.png" style="box-sizing: content-box;border: none;margin-top: 20px;height: 2px;width: 70%;margin-left: 15%;"/>
+	   <div style="box-sizing: content-box;background-size: 100%;background-repeat: no-repeat;border: none;margin-top: 20px;height: 2px;width: 70%;margin-left: 15%;background-image:url('/image/LineImg.png')"/>
           </div>
         {% elif theme.auto_excerpt.enable %}
           <span itemprop="articleBody">
@@ -132,7 +132,7 @@
             <a class="btn" href="{{ url_for(post.path) }}{% if theme.scroll_to_more %}#more{% endif %}" rel="contents">
               {{ __('post.read_more') }} &raquo;
             </a>
-	    <img src="/image/LineImg.png" style="box-sizing: content-box;border: none;margin-top: 20px;height: 2px;width: 70%;margin-left: 15%;"/>
+	    <div style="box-sizing: content-box;border: none;background-size: 100%;background-repeat: no-repeat;margin-top: 20px;height: 2px;width: 70%;margin-left: 15%;background-image:url('/image/LineImg.png')"/>
           </div>
         {% else %}
           <span itemprop="articleBody">

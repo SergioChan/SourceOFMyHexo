@@ -960,7 +960,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffebcb;
+  background: #4eff6c;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -1461,7 +1461,6 @@ body {
 .pagination {
   margin: 120px 0 40px;
   text-align: center;
-  border-top: 1px solid #eee;
 }
 .page-number-basic,
 .pagination .prev,
@@ -1511,8 +1510,8 @@ body {
 }
 .pagination .page-number.current {
   color: #fff;
-  background: #ccc;
-  border-top-color: #ccc;
+  background: #000;
+  border-top-color: #000;
 }
 @media (max-width: 767px) {
   .pagination {
@@ -2103,24 +2102,6 @@ ul li {
     font-size: 26px;
   }
 }
-.posts-expand .post-title:before {
-  content: " ";
-  position: absolute;
-  left: -10px;
-  top: 25%;
-  width: 3px;
-  height: 50%;
-  background: #999;
-  transition-property: background-color;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-  transition-delay: 0s;
-}
-@media (max-width: 767px) {
-  .posts-expand .post-title:before {
-    display: none;
-  }
-}
 .posts-expand .post-title:hover:before {
   background: #222;
 }
@@ -2143,15 +2124,15 @@ ul li {
 }
 .post-more-link {
   margin-top: 20px;
-  text-align: left;
+  text-align: center;
 }
 .post-more-link a {
   padding: 0;
   font-size: 14px;
-  color: #666;
+  font-weight: lighter;
+  color: #000;
   background: none;
   border: none;
-  border-bottom: 2px solid #666;
   transition-property: border;
 mobie()
 }
@@ -2161,7 +2142,7 @@ mobie()
   }
 }
 .post-more-link a:hover {
-  border-bottom-color: #222;
+  font-weight: bolder;
 }
 .btn {
   padding: 0 10px;
@@ -2208,7 +2189,7 @@ mobie()
 }
 .pagination {
   margin: 120px 0 0;
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .pagination {
@@ -2224,7 +2205,7 @@ mobie()
 }
 .footer-inner {
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .footer-inner {
