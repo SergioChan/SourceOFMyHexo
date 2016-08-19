@@ -4,7 +4,16 @@ type: "about"
 comments: false
 ---
 
+
+
+> Vibrance - Wisp X
+
+<video width="480" height="0" controls="controls" preload="auto" loop="loop">
+<source src="/music/test.mp3">
+</video>
+
 ## About me
+
 就职于[RavenTech渡鸦科技](https://www.raventech.com/)/同时也是[SwiftGG中文翻译组](http://swift.gg/)成员和交互动效开源组织[Animatious](http://anius.io)成员。
 
 * 软件工程。喜欢梳理，喜欢好的设计和架构。
@@ -17,10 +26,6 @@ comments: false
 * 最后一句，如小萌所说，**自命不凡**。
 
 ## Skills
-我是个有自知之明的人，也不会妄自菲薄，所以我也不会随便吹牛自己会什么会什么。我明白有很多东西我很多时候只是停留在了实现上，也就是最终实现了所有需求，但是对更深层的原理并无深究。这不是说我不懂，我学过的基础知识足够我去理解大部分的原理，但可能我并没有兴趣去记忆这些原理。你可以说我是个表面的人，我并不会反驳，关于这样的歧视和误解我已经遇见过足够多了，理解的人自然明白，不理解的人也自然有他们的道理。
-
-我们不是每个人都能成为巧哥那样的大神，也不是每个人都能成为教授，所以花更多时间去做自己喜欢的东西，去实现自己认为能够改变自己生活方式，甚至改变他人生活方式的事物开始做起，不是更有意义吗？
-
 * **PHP** - 因为用的太熟练，沦为我写测试脚本，偶尔爬爬网页之类的工具语言
 * **Python** - 仅次于Swift的最好的语言！感觉不由自主的就开始思考架构，写算法也变得有趣了！以前用C++写上机题的时候真心想吐
 * **Objective-C** - Xcode是最好的IDE！……总之比Java整齐干净舒服多了
@@ -35,17 +40,18 @@ comments: false
 
 ## TimeLine
 
+### FengRu Venture Competition Silver Medal
+
+- Beijing University of Aeronautics and Astronautics
+- 2014 年 5 月
+- Silver Medal for the iCampus project in Venture Competition of the whole university.
+
 ### Hackathon Rank#1
+
 * Dorahacks
 * 2015 年 5 月
 * Rank #1 in Hackathon of Beihang University hosted by Dorahacks
 * Developed a Chrome plugins to add Danmaku to every single web pages
-
-### FengRu Venture Competition Silver Medal
-* Beijing University of Aeronautics and Astronautics
-* 2014 年 5 月
-* Silver Medal for the iCampus project in Venture Competition of the whole university.
-
 
 ### Hackathon Rank#1
 * SegmentFault Inc.
@@ -66,6 +72,20 @@ comments: false
 * 2016 年 1 月
 * Rank #3 in Hackathon Uber China 2016
 * Developed a guide app for travellers all around the world using Uber API to give them more comfortable experience
+
+### Hackathon Rank#1
+
+- SegmentFault Inc.
+- 2016 年 6 月
+- Rank #1 in SegmentFault Hackathon of ShenZhen 2016
+- An iOS app including a simple AI that can help you create your own application through simple chat.
+
+### Hackathon Rank#1
+
+- SegmentFault Inc.
+- 2016 年 6 月
+- Rank #1 in SegmentFault Hackathon of Beijing 2016
+- A chrome extension for live video chat room.
 
 ## More?
 项目和经历什么的我不多说了，我的[Github仓库](https://github.com/SergioChan)和[Linkedin主页](https://cn.linkedin.com/pub/sergio-chan/42/14b/a6)都有足够的信息让你了解更多的我了。
