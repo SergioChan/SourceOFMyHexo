@@ -24,7 +24,7 @@ tags: [Unity, Photon]
 
 创建一个你用来维护游戏网络逻辑的脚本，例如命名为 `GameNetworkClient.cs`，然后你需要在头部加上这几个引用：
 
-```c#
+```
 using System.Collections;
 using ExitGames.Client.Photon;
 using ExitGames.Client.Photon.LoadBalancing;
@@ -35,7 +35,7 @@ using Hashtable = ExitGames.Client.Photon.Hashtable;
 
 接着声明一个私有的 `LoadBalancingClient`对象，你的脚本中的所有网络逻辑都会通过这个 `client` 对象来发起和回调。我们这样在 Start 中初始化 `client` 对象：
 
-```c#
+```
 client = new LoadBalancingClient();
 client.AppId = "{你的 App_id}";  
 client.OnStateChangeAction += this.OnStateChanged;
@@ -76,7 +76,7 @@ client.ConnectToRegionMaster("asia");
 
 返回的是一个 `OperationResponse` 对象，它会在每次你用 `client` 对象调用一些方法并且获得 response 之后调用，分别有下面这些类型的 Operation:
 
-```c#
+```
 public class OperationCode {
         [Obsolete("Exchanging encrpytion keys is done internally in the lib now. Don't expect this operation-result.")]
         public const byte ExchangeKeysForEncryption = 250;
@@ -139,7 +139,7 @@ public class OperationCode {
 
 返回的是一个 `EventData` 对象，它会在每次 `client` 接收到新的 Event 的时候调用，具体的 Event 类型根据`EventData` 的 `EventCode` 来确定，分别有下面这些类型的 `EventCode`:
 
-```c#
+```
 public class EventCode {
         /// <summary>(230) Initial list of RoomInfos (in lobby on Master)</summary>
         public const byte GameList = 230;
@@ -194,7 +194,7 @@ public class EventCode {
 
 当然，你还可以自定义 Event，在我实现的 demo 中我就是用到了自定义 Event 来告知其他玩家我的状态。比如，整个地图 （可以看做就是一个 `Room`）中的玩家列表和位置是可以用全局状态来同步的，但是例如单个玩家的一些事件（使用物品，使用技能之类的）可能就需要由发起的用户向全 `Room` 的其他玩家发送一个同步事件。
 
-```c#
+```
 byte eventCode = 1; 
 Hashtable evData = new Hashtable (); 
 evData.Add ("player_id", random_playerid);

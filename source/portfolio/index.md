@@ -1,10 +1,3 @@
-title: portfolio
-
----
-
-
-# Portfolio
-
 ## Hackathon 项目
 成立了**hACKbUSTER黑客松团队**。  
 这个团队以我和小萌为核心，参加了一次Segmentfault Hackathon北京站，参加了一次中国美院的China Art Hackathon，参加了一次Uber China Hackathon。分别获得了两次第一和一次第三的成绩。  
@@ -14,7 +7,7 @@ title: portfolio
 仓库地址：[https://github.com/hACKbUSTER/UberGuide-iOS](https://github.com/hACKbUSTER/UberGuide-iOS)  
 客户端使用了Objective-C和Swift混编，服务端采用了部署在leancloud的NodeJS后端。 
 最后获得第三。  
- 
+
 ![image](/image/STPreview.png)
 
 ### Periscope
