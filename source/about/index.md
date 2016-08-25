@@ -1,5 +1,8 @@
-date: 2015-10-22 16:55:52
+title: 关于
+date: 2015-10-22 17:04:18
 type: "about"
+
+
 comments: false
 ---
 
@@ -7,7 +10,7 @@ comments: false
 
 > Vibrance - Wisp X
 
-<video width="480" height="0" controls="controls" preload="auto" loop="loop">
+<video width="200" height="0" controls="controls" preload="auto" loop="loop">
 <source src="/music/test.mp3">
 </video>
 

@@ -1,24 +1,32 @@
-## Hackathon 项目
+title: Portfolio
+date: 2015-10-22 17:04:18
+type: "bio"
+comments: true
+---
+
+
+### Hackathon 项目
+
 成立了**hACKbUSTER黑客松团队**。  
-这个团队以我和小萌为核心，参加了一次Segmentfault Hackathon北京站，参加了一次中国美院的China Art Hackathon，参加了一次Uber China Hackathon。分别获得了两次第一和一次第三的成绩。  
+这个团队是以我和小萌为核心，召集了一大群各路小伙伴一起组建的。参加了两次 Segmentfault Hackathon 北京站，一次 Segmentfault Hackathon 深圳站，参加了一次中国美院的China Art Hackathon，参加了一次Uber China Hackathon。分别获得了四次第一和一次第三的成绩。  
 这个组织的Github主页在[这里](https://github.com/hACKbUSTER)。
 
 ### Smart Traveller
-仓库地址：[https://github.com/hACKbUSTER/UberGuide-iOS](https://github.com/hACKbUSTER/UberGuide-iOS)  
+[仓库地址](https://github.com/hACKbUSTER/UberGuide-iOS)  
 客户端使用了Objective-C和Swift混编，服务端采用了部署在leancloud的NodeJS后端。 
 最后获得第三。  
 
 ![image](/image/STPreview.png)
 
 ### Periscope
-仓库地址：[https://github.com/hACKbUSTER/Renaissance](https://github.com/hACKbUSTER/Renaissance)  
+[仓库地址](https://github.com/hACKbUSTER/Renaissance)
 客户端采用了Scenekit实现可视化效果，服务端采用了Max/Msp音乐编程，数据通信采用了基于UDP协议的OSC协议。  
 最后获得第一。
 
 ![image](/image/PRPreview.jpg)
 
 ### Fix++
-仓库地址：[https://github.com/hACKbUSTER/FixPlusPlus](https://github.com/hACKbUSTER/FixPlusPlus)  
+[仓库地址](https://github.com/hACKbUSTER/FixPlusPlus)
 客户端采用了Unity实现AR功能。3D模型则是通过3DMax和MODO完成的。  
 最后获得第一。  
 
@@ -30,33 +38,33 @@
 这个组织的Github主页在[这里](https://github.com/Animatious)。
 
 ### SCActivityIndicator
-仓库地址：[https://github.com/SergioChan/SCActivityIndicatorView](https://github.com/SergioChan/SCActivityIndicatorView)  
+[仓库地址](https://github.com/SergioChan/SCActivityIndicatorView  )
 
 ![image](/image/ActivityIndicator.jpg)
 
 
 ### SCCatWaitingHUD
-仓库地址：[https://github.com/SergioChan/SCCatWaitingHUD](https://github.com/SergioChan/SCCatWaitingHUD)  
+[仓库地址](https://github.com/SergioChan/SCCatWaitingHUD)
 
 ![image](/image/CatWaitingHUD.png)
 
 ### SCCinemaAnimation
-仓库地址：[https://github.com/SergioChan/SCCinemaAnimation](https://github.com/SergioChan/SCCinemaAnimation)  
+[仓库地址](https://github.com/SergioChan/SCCinemaAnimation)
 
 ![image](/image/CinemaAnimation.png)
 
 ### SCNavigationControlCenter
-仓库地址：[https://github.com/SergioChan/SCNavigationControlCenter](https://github.com/SergioChan/SCNavigationControlCenter)  
+[仓库地址](https://github.com/SergioChan/SCNavigationControlCenter)
 
 ![image](/image/NavigationControlCenter.png)
 
 ### SCTrelloNavigation
-仓库地址：[https://github.com/SergioChan/SCTrelloNavigation](https://github.com/SergioChan/SCTrelloNavigation)  
+[仓库地址](https://github.com/SergioChan/SCTrelloNavigation) 
 
 ![image](/image/TrelloNavigation.png)
 
 ### SCAwesomeNetworking
-仓库地址：[https://github.com/SergioChan/SCAwesomeNetworking](https://github.com/SergioChan/SCAwesomeNetworking)
+[仓库地址](https://github.com/SergioChan/SCAwesomeNetworking)
 
 
 ## 其他项目
