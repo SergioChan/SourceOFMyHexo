@@ -196,7 +196,7 @@ HAVING COUNT(Person.Id) > 1;
 
 #### Comment :
 
-这题简单的不能再简单了，然而还是有一个蛋疼的坑：**COUNT 的用法**。这题如果你在 having COUNT() 括号中写 * 号，是不能通过的，原因就在于 **COUNT(*)** 统计的是表中数据的总条数，而 **COUNT(Person.Id)** 统计的则是除去表中 Id 不等于 NULL 的记录的总条数。因此很可能它有某个 testcase 中有 NULL 的数据来考察对于 COUNT 的理解吧。
+这题简单的不能再简单了，然而还是有一个蛋疼的坑：**COUNT 的用法**。这题如果你在 **having COUNT()** 括号中写 \* 号，是不能通过的，原因就在于 **COUNT(\*)** 统计的是表中数据的总条数，而 **COUNT(Person.Id)** 统计的则是除去表中 Id 不等于 NULL 的记录的总条数。因此很可能它有某个 testcase 中有 NULL 的数据来考察对于 COUNT 的理解吧。
 
 ### 183 . Customers Who Never Order
 
