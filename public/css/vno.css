@@ -6168,6 +6168,7 @@ pre code {
 }
 .avatar,
 .logo {
+  background-color: #fff;
   border-radius: 50%;
   border: 3px solid #fff;
   box-shadow: 0 0 1px 1px rgba(0,0,0,0.3);
@@ -6235,14 +6236,16 @@ hr {
 .panel-title {
   margin: 0 0 5px 0;
   font-size: 2em;
-  letter-spacing: 4px;
+  letter-spacing: 0px;
   color: #fff;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3em;
 }
 .panel-subtitle {
   font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 1.2em;
   font-weight: lighter;
-  letter-spacing: 1.5px;
+  letter-spacing: 0px;
   color: #ccc;
   -webkit-font-smoothing: antialiased;
 }
@@ -6253,7 +6256,7 @@ hr {
   width: 100%;
   max-width: none;
   height: 100%;
-  background: url("../images/background-cover.jpg") top left no-repeat #666;
+  background: url("https://ooo.0o0.ooo/2016/08/26/57bfb74660e16.jpg") top left no-repeat #666;
   background-size: cover;
 }
 .panel-cover--collapsed {
@@ -6273,7 +6276,7 @@ hr {
   background-image: linear-gradient(140deg, rgba(68,68,68,0.6) 20%, rgba(0,0,0,0.9));
 }
 .panel-cover__logo {
-  margin-bottom: 0.2em;
+  margin-bottom: 1em;
 }
 .panel-cover__description {
   margin: 0 30px;
@@ -6641,7 +6644,7 @@ input[type="tel"]:-ms-input-placeholder {
     width: 70px;
   }
   .panel-title {
-    font-size: 2em;
+    font-size: 2.2em;
   }
   .panel-subtitle {
     font-size: 1em;
@@ -6714,7 +6717,8 @@ input[type="tel"]:-ms-input-placeholder {
     right: 0;
     left: 0;
     width: 100%;
-    padding: 50px 0;
+    padding-top: 50px;
+    padding-bottom: 10px;
     background: rgba(51,51,51,0.98);
     border-bottom: 1px solid rgba(255,255,255,0.15);
   }
