@@ -8,7 +8,7 @@ tags: [WKWebView, WebKit, Safari 阅读模式]
 
 在浏览器中，阅读模式通常是一个很有用的功能，有人说这是读小说神器，有些人则认为阅读模式可以改善新闻网站的阅读体验，而有些广告商则对此抗议，认为阅读模式损害了广告主利益。当然，阅读模式对于普通用户来说是一种很方便实用的功能，这个无可厚非。
 
-在手机上，阅读模式有两种实现方式，一种是和 Safari 的实现类似的，利用 JS 去解析网页数据分析出文本，基本上手机浏览器的实现都和 Safari 类似，另外一种则是抓取网页对应的 RSS 源，解析 RSS 源中的数据格式，取出需要的文本来显示。接下来我要展开讲的就是和 Safari 类似的阅读模式的实现，且是基于 WKWebView 来实现的。
+在手机上，阅读模式有两种实现方式，一种是和 Safari 的实现类似的，利用 js 去解析网页数据分析出文本，基本上手机浏览器的实现都和 Safari 类似，另外一种则是抓取网页对应的 RSS 源，解析 RSS 源中的数据格式，取出需要的文本来显示。接下来我要展开讲的就是和 Safari 类似的阅读模式的实现，且是基于 WKWebView 来实现的。
 
 详细的项目代码在这： [PFWebViewController](https://github.com/PerfectFreeze/PFWebViewController)
 
@@ -24,8 +24,8 @@ tags: [WKWebView, WebKit, Safari 阅读模式]
 首先，我们需要用两个 WKWebView 来实现整个流程，一个是主要的浏览窗口 ( 暂且命名为 ) **MainWebView**，另一个则是用于阅读模式页面显示的 **ReaderWebView** 。参与整个阅读模式渲染流程的文件大致有这些：
 
 - index.html
-- safari-reader.js # 这个 js 负责的是内容的格式化和渲染，挂载在 MainWebView 上
-- safari-reader-check.js # 这个 js 负责的是内容的判断和提取，挂载在 ReaderWebView 上，（在最新的 Safari 中我一直没有截到这个脚本，从最后实现的效果来看，苹果可能将这部分放进原生实现了，所以这里我们就只能使用这个比较早期版本的 js 实现的内容判断，会出现一些网页最新版 Safari 会出现阅读模式的按钮而你使用它却判断无法进入阅读模式）
+- safari-reader.js # 这个 js 负责的是内容的格式化和渲染，挂载在 **ReaderWebView** 上
+- safari-reader-check.js # 这个 js 负责的是内容的判断和提取，挂载在 **MainWebView**  上，（在最新的 Safari 中我一直没有截到这个脚本，从最后实现的效果来看，苹果可能将这部分放进原生实现了，所以这里我们就只能使用这个比较早期版本的 js 实现的内容判断，会出现一些网页最新版 Safari 会出现阅读模式的按钮而你使用它却判断无法进入阅读模式）
 - ReaderContext.h # 这就是原生实现的 C++ 代码头文件，应该是作为上面两个 js 之间的原生 Bridge，用指针插入的方法用 C++ 向 js 中插入可以直接调用的原生类和方法
 
 Safari 的基本流程就是，当 **MainWebView** 上的网页的 HTML 加载完成后，执行 safari-reader-check (当然后来可能执行原生代码去判断了，或者使用了更新的 js 文件) 中的 FinderJS 的函数来判断当前网页是否存在合适的 Node 来作为 Article，判断的规则大致就是根据 H 标签的个数，文本的长度之类的参数计算出权重，最后获得一个权重最高的 Node 作为 Article 对象。如果存在这个对象，则会告知浏览器显示阅读模式的按钮，反之浏览器则不会显示这个按钮。
@@ -38,13 +38,13 @@ Safari 的基本流程就是，当 **MainWebView** 上的网页的 HTML 加载�
 
 ![](https://ooo.0o0.ooo/2016/10/13/57ff3c766c7a9.png)
 
-当 body 加载的时候，它会调用 `ReaderJS.loaded()` 方法，这个方法负责处理 ReaderContext 传递过来的 Article 对象并将生成的 `<div class="page">` 这个标签添加到 id 为 article 的标签下面。 用到的两个 js 文件都是匿名脚本，其中主要的 safari_reader.js 脚本可以通过点击空白区域添加断点来截获的，因为他有一个监听鼠标点击的事件。
+当 body 加载的时候，它会调用 `ReaderJS.loaded()` 方法，这个方法负责处理 ReaderContext 传递过来的 Article 对象并将生成的 `<div class="page">` 这个标签添加到 id 为 article 的标签下面。 用到的两个 js 文件都是匿名脚本，其中主要的 safari_reader.js 脚本可以通过点击空白区域添加断点来截获的（因为他实现了一个监听鼠标点击的事件）。
 
 ### 我的实现
 
 首先，初始化两个 webView，并在 **MainWebView** 上加载原网页，记得：
 
-```objective-c
+```
  _webView.navigationDelegate = self;
  _readerWebView.navigationDelegate = self;
 ```
@@ -111,7 +111,7 @@ Safari 的基本流程就是，当 **MainWebView** 上的网页的 HTML 加载�
 
 ![](https://ooo.0o0.ooo/2016/10/21/5809b436031ce.jpeg)
 
-接下来就是点击阅读模式按钮的响应事件，这里我们可以不用 C++ 搭桥梁的方式传递对象指针，而直接用了一种更 trick 的办法，将提取出来的 Article 对象以不可见的形式添加到目标的 **ReaderWebView** 中，然后修改获取到的 js 文件，让 safari-reader.js 在渲染完正文内容后将临时的这个不可见的节点删除。
+接下来就是点击阅读模式按钮的响应事件，这里我们可以不用 C++ 搭桥梁的方式传递对象指针，而直接用了一种更 tricky 的办法，将提取出来的 Article 对象以不可见的形式添加到目标的 **ReaderWebView** 中，然后修改获取到的 js 文件，让 safari-reader.js 在渲染完正文内容后将临时的这个不可见的节点删除。
 
 ```
 [_webView evaluateJavaScript:@"var ReaderArticleFinderJS = new ReaderArticleFinder(document);" completionHandler:^(id _Nullable object, NSError * _Nullable error) {
@@ -178,9 +178,9 @@ loaded: function() {
 },
 ```
 
-最后几行先是移除了 article 这个节点之下的第一个子节点，也就是我们添加上去的不可见的临时节点。然后通过 WKWebView 新的 js 交互方式发送消息，向原生的 Controller 发送一个加载完成的信号，我们可以在原生的 Controller 里面获取这个信息，然后随即开始阅读模式页面切换的动画：
+最后几行先是移除了 article 这个节点之下的第一个子节点，也就是我们添加上去的不可见的临时节点。然后通过 `WKWebView` 新的 js 交互方式发送消息，向原生的 Controller 发送一个加载完成的信号，我们可以在原生的 Controller 里面获取这个信息，然后随即开始阅读模式页面切换的动画：
 
-```objective-c
+```
 - (void)userContentController:(WKUserContentController *)userContentController
       didReceiveScriptMessage:(WKScriptMessage *)message {}
 ```
@@ -216,7 +216,7 @@ loaded: function() {
 
 ### PS.
 
-最后说一句，当然，毕竟这样抓取苹果的脚本来做和系统一样的效果是很 trick 的办法，但是：
+最后说一句，当然，毕竟这样抓取苹果的脚本来做和系统一样的效果是很 tricky 的办法，但是：
 
 - 审核是能过的，但是不保证能不能一定过
 
