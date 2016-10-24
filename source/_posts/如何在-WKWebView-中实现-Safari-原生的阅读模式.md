@@ -14,11 +14,13 @@ tags: [WKWebView, WebKit, Safari 阅读模式]
 
 ### 了解 Safari 阅读模式的实现
 
-关于实现，你可以先参考这两篇博客：
+关于实现，你可以先参考下面这两篇博客：
 
 - [iOS Safari阅读模式分析过程](http://blog.csdn.net/horkychen/article/details/50959785) 
 - [iOS Safari阅读模式研究](http://blog.csdn.net/horkychen/article/details/50959771)
 
+> 一定要写这篇博客的原因就是，我能查到与此相关的中文博客有且仅有这两篇，我接下来讲的会更通俗易懂一些，毕竟最后模仿系统实现出来了。上面两篇的作者最后的结论和代码并不能正常运行，但是提供的信息和资源多多少少给了我很多参考。
+>
 > 其中，第二篇中提到的 JavaScriptCore，由于 WKWebView [不再支持](http://stackoverflow.com/questions/25792131/how-to-get-jscontext-from-wkwebview)，我们会用到 WebKit 支持的发送消息的传递信息模式。核心要用到的 JavaScript 文件在这两篇博客中也有给出。
 
 首先，我们需要用两个 WKWebView 来实现整个流程，一个是主要的浏览窗口 ( 暂且命名为 ) **MainWebView**，另一个则是用于阅读模式页面显示的 **ReaderWebView** 。参与整个阅读模式渲染流程的文件大致有这些：
@@ -109,7 +111,7 @@ Safari 的基本流程就是，当 **MainWebView** 上的网页的 HTML 加载�
 }
 ```
 
-![](https://ooo.0o0.ooo/2016/10/21/5809b436031ce.jpeg)
+<img src="https://ooo.0o0.ooo/2016/10/21/5809b436031ce.jpeg" width = "40%" />
 
 接下来就是点击阅读模式按钮的响应事件，这里我们可以不用 C++ 搭桥梁的方式传递对象指针，而直接用了一种更 tricky 的办法，将提取出来的 Article 对象以不可见的形式添加到目标的 **ReaderWebView** 中，然后修改获取到的 js 文件，让 safari-reader.js 在渲染完正文内容后将临时的这个不可见的节点删除。
 
@@ -144,7 +146,7 @@ Safari 的基本流程就是，当 **MainWebView** 上的网页的 HTML 加载�
 
 > 这里采用的使 div 不可见的方式比较特别，因为 visibilty 或者 display 或者 height 这些参数都会被 js 排除在计算的节点之外，所以用 **top: -999em** 的写法。
 
-**ReaderWebView** 在 load 之后就会调用挂载在上面的 script 中的 loaded 方法：
+**ReaderWebView** 在 load 之后就会调用挂载在上面的 safari-reader.js 中的 loaded 方法：
 
 ```javascript
 loaded: function() {
@@ -185,7 +187,9 @@ loaded: function() {
       didReceiveScriptMessage:(WKScriptMessage *)message {}
 ```
 
-![](https://ooo.0o0.ooo/2016/10/21/5809b43604002.jpeg)
+> 除了 loaded 方法，safari-reader.js 还有许多代码需要修改，最终可用的版本请参考项目仓库中的文件。
+
+<img src="https://ooo.0o0.ooo/2016/10/21/5809b43604002.jpeg" width = "40%" />
 
 ### 一个多余的问题记录 - 「在微信中打开」按钮点击失效
 
