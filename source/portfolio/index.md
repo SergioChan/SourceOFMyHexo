@@ -5,37 +5,63 @@ comments: true
 ---
 
 
-### Hackathon 项目
+### Hackathon Projects
 
-成立了**hACKbUSTER黑客松团队**。  
-这个团队是以我和小萌为核心，召集了一大群各路小伙伴一起组建的。参加了两次 Segmentfault Hackathon 北京站，一次 Segmentfault Hackathon 深圳站，参加了一次中国美院的China Art Hackathon，参加了一次Uber China Hackathon。分别获得了四次第一和一次第三的成绩。  
-这个组织的Github主页在[这里](https://github.com/hACKbUSTER)。
+成立了 **hACKbUSTER黑客松团队**。  
+这个团队是以我和小萌为核心，召集了一大群各路小伙伴一起组建的。
+
+目前为止参与的比赛以及所获奖项如下：
+
+- **#RANK 1#** 2015 Dorahack Beihang University 
+- **#RANK 1#** 2015 Segmentfault Beijing Hackathon
+- **#RANK 1#** 2015 中国美院 China Art Hackathon
+- **#RANK 3#** 2016 Uber China Hackathon
+- **#RANK 1#** 2016 Segmentfault Shenzhen Hackathon
+- **#RANK 1#** 2016 Segmentfault Beijing Hackathon
+- **#RANK 1#** 2016 HackerX Tsinghua University
+- **#RANK 3#** 2016 Shanghai i-Lab Hackathon
+- **#NORANK#** 2016 Shanghai HACKxFDU
+
+这个组织的 Github 主页在[这里](https://github.com/hACKbUSTER)，我们坚持每次比赛的代码和设计稿都会在 Github 上开源。
+
+### Connect ++
+
+[仓库地址](https://github.com/hACKbUSTER/ConnectPlusPlus) 
+
+Connect ++ is a LBS information sharing platform. Simple click to share your information and simple click to view the information shared by others, we connect the citizens in this city together to build a smarter city. Furthermore, we could provide open API for public service and utilities to upload their information onto our platform, with more latest and location-related information. It could be the fundamental platform to build smarter city.
+
+<img src="https://ooo.0o0.ooo/2016/10/24/580e247fc5033.jpg" width = "60%" style = "text-align:center"/>
+
+### Project M
+
+[仓库地址](https://github.com/hACKbUSTER/ProjectM-SafariExtension)
+
+**A live video chat room based on Browser Extension**. Right now we only developed extension for Safaris, but further we definitely will develop versions for Chrome and Firefox.
+
+Using this extension, you will be randomly distributed into a chat room with some audiences who were watching the same web page or video as you were, these videos could be the NBA Finals, World Cup Finals, any Sports Live Video or some important live events such as WWDC. With Project M, you can easily connect with other people who were watching the same thing at almost the same time, even more faster and better than the older Danmaku. You can find some friends to watch the sport games together, find some developers all around the world to expect the Apple WWDC together, even more you can criticize your favorite TV series with other people who are also interested.
 
 ### Smart Traveller
 [仓库地址](https://github.com/hACKbUSTER/UberGuide-iOS)  
-客户端使用了Objective-C和Swift混编，服务端采用了部署在leancloud的NodeJS后端。 
-最后获得第三。  
+Objective-C / Swift / leancloud NodeJS 
 
-![image](/image/STPreview.png)
+<img src="https://ooo.0o0.ooo/2016/10/24/580e1bf7998d3.png" width = "40%" style = "text-align:center"/>
 
 ### Periscope
 [仓库地址](https://github.com/hACKbUSTER/Renaissance)
-客户端采用了Scenekit实现可视化效果，服务端采用了Max/Msp音乐编程，数据通信采用了基于UDP协议的OSC协议。  
-最后获得第一。
+Scenekit / Max Msp音乐编程 / 基于UDP协议的OSC协议  
 
-![image](/image/PRPreview.jpg)
+<img src="https://ooo.0o0.ooo/2016/10/24/580e1bf774a2d.jpg" width = "60%" style = "text-align:center"/>
 
 ### Fix++
 [仓库地址](https://github.com/hACKbUSTER/FixPlusPlus)
-客户端采用了Unity实现AR功能。3D模型则是通过3DMax和MODO完成的。  
-最后获得第一。  
+Unity AR /  3DMax & MODO
 
-![image](/image/FIXPreview.jpg)
+<img src="https://ooo.0o0.ooo/2016/10/24/580e1bf7bdd02.jpg" width = "60%" text-align = "center"/>
 
-## 开源
+## Open Source
 成立了**Animatious一起动画开源组**。  
-这个团队以很多优秀的年轻开发者和年轻设计师为主力，已经贡献了一些高质量的开源项目，技术分享和设计原稿。我在成立之前和之后写了一些开源的控件库。  
-这个组织的Github主页在[这里](https://github.com/Animatious)。
+这个团队以很多优秀的年轻开发者和年轻设计师为主力，已经贡献了一些高质量的开源项目，技术分享和设计原稿。我在成立之前和之后写了一些开源的动效控件库。  
+这个组织的 Github 主页在[这里](https://github.com/Animatious)。
 
 ### SCActivityIndicator
 [仓库地址](https://github.com/SergioChan/SCActivityIndicatorView  )
