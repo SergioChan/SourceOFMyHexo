@@ -4,8 +4,7 @@ type: "bio"
 comments: true
 ---
 
-
-### Hackathon Projects
+## Hackathon Projects
 
 成立了 **hACKbUSTER黑客松团队**。  
 这个团队是以我和小萌为核心，召集了一大群各路小伙伴一起组建的。
@@ -92,5 +91,34 @@ Unity AR /  3DMax & MODO
 ### SCAwesomeNetworking
 [仓库地址](https://github.com/SergioChan/SCAwesomeNetworking)
 
+## Standalone App
 
-## 其他项目
+### MorningHorn - iOS
+
+<img src="http://a5.mzstatic.com/us/r30/Purple49/v4/dc/c6/6a/dcc66ad1-d9dc-04b5-2307-accd7f51113f/screen696x696.jpeg" width = "50%" style = "text-align:center"/>
+
+A simple alarm app based on [Dribbble](https://dribbble.com/shots/2388267-Morning-Horn) design. App Store Link is [this](https://itunes.apple.com/us/app/morninghorn-chen-xi-hao-jiao/id1087901459?l=zh&ls=1&mt=8).
+
+### EarthQuick - Mac
+
+<img src="http://a5.mzstatic.com/us/r30/Purple71/v4/d7/65/78/d765786c-16e7-8f7d-8385-ad27b1c078c6/screen800x500.jpeg" width = "100%" style = "text-align:center"/>
+
+A simple earthquake realtime information service and application. App Store Link is [this](https://itunes.apple.com/us/app/earthquick-quick-earthquake/id1176945747?l=zh&ls=1&mt=12).
+
+View [Intro Page](https://earthquick.github.io/).
+
+### Popularity Widget for GitHub - iOS
+
+<img src="http://a1.mzstatic.com/us/r30/Purple71/v4/cc/5c/8a/cc5c8a01-87c7-d67f-4215-79c84c40ca45/screen696x696.jpeg" width = "50%" style = "text-align:center"/>
+
+Popularity is a GitHub extension widget for you to trace the trends of your increasing stars and followers.App Store Link is [this](https://itunes.apple.com/us/app/popularity-widget-for-github/id1180395751?l=zh&ls=1&mt=8).
+
+View [Intro Page](http://sergiochan.github.io/popularity/).
+
+### SearchBoard - iOS
+
+<img src="https://ooo.0o0.ooo/2016/12/07/5847b7400fbd9.png" width = "50%" style = "text-align:center"/>
+
+**SearchBoard** is a custom Keyboard Extension that allows you to search every text content from every possible input view, making it much more easier to reach the information you want. App Store Link is [this](https://itunes.apple.com/us/app/searchboard-search-everything/id1182980626?l=zh&ls=1&mt=8).
+
+View [Intro Page](http://sergiochan.xyz/searchboard/).
